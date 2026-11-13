@@ -1,0 +1,30 @@
+package app;
+
+import armas.EspadaExplorador;
+import botas.BotasEnlace;
+import casco.CascoHierroSellado;
+import casco.CascoRunico;
+import casco.ProteccionElemental;
+import peto.PetoEnlace;
+
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("=== PRUEBA FINAL: COMPONENT QUEST ===");
+
+        // Ronda 1: Dragón Ignis (Ataque limpio)
+        EspadaExplorador espada = new EspadaExplorador();
+        System.out.println("Ataque con espada: " + espada.atacar() + " pts");
+
+        // Ronda 2: Golem Sísmico (Peto y Botas sin ciclo)
+        BotasEnlace botas = new BotasEnlace();
+        PetoEnlace peto = new PetoEnlace();
+        System.out.println("Escudo con botas equipadas: " + peto.escudoActivo(botas));
+        System.out.println("Escudo al retirar botas (null): " + peto.escudoActivo(null));
+
+        // Ronda 4: Espectro Cambiante (Fuego)
+        ProteccionElemental cascoHierro = new CascoHierroSellado();
+        ProteccionElemental cascoRunico = new CascoRunico();
+        System.out.println("Defensa Casco Hierro vs FUEGO: " + cascoHierro.resistirAtaque("FUEGO"));
+        System.out.println("Defensa Casco Rúnico vs FUEGO: " + cascoRunico.resistirAtaque("FUEGO"));
+    }
+}
